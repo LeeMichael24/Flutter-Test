@@ -4,6 +4,7 @@ import 'package:testfox2/pages/login_page.dart';
 import 'package:testfox2/pages/profile_page.dart';
 import 'package:testfox2/pages/settings_page.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -25,3 +26,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
