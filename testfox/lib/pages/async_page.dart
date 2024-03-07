@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:testfox/utils/loaders.dart';
+import 'package:testfox/screens/listview_data_page.dart';
+import 'package:testfox/screens/simpledata_screen.dart';
 
 
 class AsyncPage extends StatelessWidget {
@@ -19,10 +20,27 @@ class AsyncPage extends StatelessWidget {
 
           children: [
             ElevatedButton(
-              onPressed: (){
+              onPressed: () async{
+                showDialog(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (context) => AlertDialog(
+                    content: Center(
+                      child: CircularProgressIndicator(
+                        color: Colors.blue,
+                        strokeWidth: 5.0,
+                        value: 0.5,
+                      ), // Use your custom loader widget
+                    ),
+                  ),
+                );
+
+                //Simular el loading de los 3 segundos
+                await Future.delayed(const Duration(seconds: 3));
+
                 Navigator.push(
                   context, 
-                  MaterialPageRoute(builder: (context) => LoadingPageSimu()),
+                  MaterialPageRoute(builder: (context) => LoadedScreen()),
                 );
               }, 
               child: Text('Load data')
@@ -31,10 +49,24 @@ class AsyncPage extends StatelessWidget {
                 height: 5,
               ), 
             ElevatedButton(
-              onPressed: (){
+              onPressed: () async{
+                showDialog(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (context) => AlertDialog(
+                    content: Center(
+                      child: CircularProgressIndicator(
+                        color: Colors.blue,
+                        strokeWidth: 5.0,
+                        value: 0.5,
+                      ), // Use your custom loader widget
+                    ),
+                  ),
+                );
+
                 Navigator.push(
                   context, 
-                  MaterialPageRoute(builder: (context) => LoadingPageSimu2()),
+                  MaterialPageRoute(builder: (context) => ListViewPageData()),
                 );
               }, 
               child: Text('Load ListView data')
