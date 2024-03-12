@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch BMS - Web Dev",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main.dart",
+            "args": [
+                "--target",
+                "lib/main.dart",
+                "--web-port",
+                "5000",
+                "--dart-define",
+                "flavor=dev"
+            ],
+        },
+        {
+            "name": "Launch BMS - Dev",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "args": [
+                "--target",
+                "lib/main.dart",
+            ],
+        },
+    ]
+}
